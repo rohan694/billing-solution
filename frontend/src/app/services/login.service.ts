@@ -11,9 +11,9 @@ export class LoginService {
   constructor(private http : HttpClient) { }
 
   getlogininfo() {
-    return this.http.get<User>("http://localhost:8082/api/user/getLoginInfo");
+    return this.http.get<User>("https://backend-q4gk.onrender.com/api/user/getLoginInfo");
   }
   login(ldto: LoginDTO) {
-    return this.http.post<any>("http://localhost:8082/api/user/login",ldto);
+    return this.http.post<any>("https://backend-q4gk.onrender.com/api/user/login",ldto);
   }
 }

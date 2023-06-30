@@ -13,13 +13,13 @@ export class RegistrationServiceService {
   public register(dto : UserCompanyDTO):Observable<any>
   {
     console.log(dto)
-    return this.http.post<UserCompanyDTO[]>("http://localhost:8082/api/user/signup",dto);
+    return this.http.post<UserCompanyDTO[]>("https://backend-q4gk.onrender.com/api/user/signup",dto);
   }
 
   public addDebtor(addNewDebtor : Object):Observable<any>
   {
     console.log(addNewDebtor)
-    return this.http.post<any[]>("http://localhost:8082/api/debtors/add",addNewDebtor);
+    return this.http.post<any[]>("https://backend-q4gk.onrender.com/api/debtors/add",addNewDebtor);
   }
 }
 
