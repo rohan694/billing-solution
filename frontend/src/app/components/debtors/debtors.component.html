@@ -1,0 +1,30 @@
+<div class="card">
+    <h2 class="card-header"><mat-icon style="padding-top: 5px;">savings</mat-icon> | Debtors <button mat-raised-button color="primary" style="float: right;" routerLink="/addUnregisteredDebtors">Add Unregistered Debtors</button></h2>
+    <div class="card-body">
+      <table class="table table-primary table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Debtor Id</th>
+            <th>Owner Name</th>
+            <th>Owner Mobile</th>
+            <th>Comapany Name</th>
+            <th>GSTIN</th>
+            <th>Company PAN</th>
+            <th>Creditor Company Id</th>
+          </tr>
+        </thead>
+          <tbody>
+            <tr *ngFor="let d of debtorsList">
+                <td>{{d.id}}</td>
+                <td>{{d.ownerName}}</td>
+                <td>{{d.ownerMobile}}</td>
+                <td>{{d.companyName}}</td>
+                <td>{{d.gstin}}</td>
+                <td>{{d.companyPan}}</td>
+                <td>{{d.creditorCompanyId}}</td>
+            </tr>
+        </tbody>  
+      
+    </table>
+    </div>
+</div>

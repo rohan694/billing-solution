@@ -1,0 +1,29 @@
+.main-page{
+    height: 100%;
+}
+
+.navbar{
+    justify-content: space-between;
+}
+span{
+    padding-right: 1rem;
+}
+
+mat-sidenav-container{
+    height : 100%;
+}
+mat-sidenav, mat-sidenav-content{
+    padding: 16px;
+}
+mat-sidenav{
+    color: antiquewhite;
+    background-color: rgb(57, 57, 57);
+    width: 230px;
+}
+
+.mat-button.mat-success:hover{
+  background-color: #00bc26;
+}
+
+hr { margin: 0.2em auto; }
+

@@ -1,0 +1,34 @@
+<mat-toolbar color="primary" class="navbar">
+  <div>ReputeInfo</div>
+  <div>
+      <span>Home</span>
+      <span>About</span>
+      <span>Services</span>
+      <span><a routerLink="/register"><button mat-raised-button color="warn">Register</button></a></span>
+  </div>
+</mat-toolbar>
+<div class="login">
+    <div class="card text-center">
+        <div class="card-header">
+          <h2>Login</h2>
+        </div>
+        <div class="card-body">
+            <form class="example-form" [formGroup]="loginForm" (ngSubmit)="login()">
+              <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+                <mat-label>User Name/ PAN Number</mat-label>
+                <input matInput placeholder="Enter your PAN" formControlName="userName" id="userName">
+              </mat-form-field><br>
+              <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Enter your password" value="" formControlName="password" id="password" type="password">
+              </mat-form-field><br>
+                <button mat-raised-button color="accent">Login</button><br><br>
+                <span>{{error_msg}}</span><br>
+                <a href="#">forgot password?</a>
+            </form>
+        </div>
+        <div class="card-footer text-body-secondary">
+          By signing up, you agree to our <a href="">Terms of Use</a> and <a href="">Policy</a>.
+        </div>
+      </div>
+</div>

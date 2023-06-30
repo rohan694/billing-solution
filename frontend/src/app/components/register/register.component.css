@@ -1,0 +1,17 @@
+.register{
+    margin: auto;
+    margin-top: 10%;
+    padding-bottom: 10%;
+    width: 50%;
+}
+
+.navbar{
+    justify-content: space-between;
+}
+span{
+    padding-right: 1rem;
+}
+
+em{
+    color: rgb(40, 40, 255);
+}

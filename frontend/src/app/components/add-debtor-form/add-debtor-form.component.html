@@ -1,0 +1,68 @@
+<div class="main-page">
+    <mat-toolbar color="primary" class="navbar">
+        <div>ReputeInfo</div>
+        <div>
+            <span>Home</span>
+            <span>About</span>
+            <span>Services</span>
+            <span><button mat-raised-button color="warn" (click)="logout()">Logout</button></span>
+        </div>
+    </mat-toolbar>
+    <div class="register">
+        <div class="card text-center">
+            <div class="card-header">
+              <h2>Add Unregistered Debtor (Buyer)<button mat-raised-button color="primary" style="float: right;" routerLink="/home">Back</button></h2>
+            </div>
+            <div class="card-body">
+                <form class="example-form" [formGroup]="form" (ngSubmit)="addDebtor()">
+                    <mat-icon>person</mat-icon>
+                    <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+                      <mat-label>Owner Name</mat-label>
+                      <input matInput placeholder="" name="name" id="name" formControlName="name">
+                    </mat-form-field><br>
+
+                    <mat-icon>phone</mat-icon>
+                    <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+                        <mat-label>Owner Mobile</mat-label>
+                        <input matInput placeholder="" name="mobile" id="mobile" formControlName="mobile" type="number">
+                    </mat-form-field><br>
+
+                    <mat-icon>business</mat-icon>
+                    <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+                      <mat-label>Business/ Company</mat-label>
+                      <!-- <input matInput placeholder="" value="" name="companyName" id="companyName" formControlName="companyName"> -->
+                      <mat-select  placeholder="" value="" name="companyId" id="companyId" formControlName="companyId">
+                        <mat-option *ngFor="let customer of customers" [value]="customer.id">
+                          {{customer.companyName}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field><br>
+
+                    <mat-icon>pin</mat-icon>
+                    <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+                        <mat-label>GSTIN</mat-label>
+                        <input matInput placeholder="" name="gstin" id="gstin" formControlName="gstin">
+                    </mat-form-field><br>
+                    
+                    <h2>OR</h2>
+                    
+                    <mat-icon>123</mat-icon>
+                    <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+                        <mat-label>Company PAN Number</mat-label>
+                        <input matInput placeholder="" name="companyPan" id="companyPan" formControlName="companyPan" type="text">
+                        <!-- <h5><em>Your username will be same as that of your PAN number</em></h5> -->
+                    </mat-form-field><br>
+
+                    
+                      <button mat-raised-button color="accent" type="submit">Register</button>
+                      <!-- <span *ngIf="show"> <button mat-button color="primary">Login success !!</button></span><br><br> -->
+                      <!-- <a href="#">forgot password?</a> -->
+                  </form>
+            </div>
+            <div class="card-footer text-body-secondary">
+              Note: Rs.10.00 will be debited from your ReputeInfo Balance.
+            </div>
+          </div>
+    </div>
+</div>
+    

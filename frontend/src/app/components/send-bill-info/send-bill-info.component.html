@@ -1,0 +1,80 @@
+<div class="card">
+    <h2 class="card-header"><mat-icon style="padding-top: 5px;">receipt_long</mat-icon> | Send Bill Transaction</h2>
+    <div class="card-body">
+      <!-- <h5 class="card-title">Search the Company using PAN and GSTIN</h5> -->
+      <form class="example-form" [formGroup]="form" (ngSubmit)="sendbillinfo()">
+
+        <mat-icon>person</mat-icon>
+        <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+          <mat-label>Customer Name</mat-label>
+          <mat-select id="debtorId" formControlName="debtorId">
+            <mat-option *ngFor="let customer of customers" [value]="customer.id">
+              {{customer.companyName}}
+            </mat-option>
+          </mat-select>
+          <sup><a routerLink ="/addUnregisteredDebtors">Add New Customer</a></sup>
+        </mat-form-field><br>
+
+        <mat-icon>calendar_month</mat-icon>
+        <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+          <mat-label>Bill Date</mat-label>
+            <input matInput [matDatepicker]="picker" id="billDate" formControlName="billDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field><br><br>
+
+        <mat-icon>article</mat-icon>
+        <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+            <mat-label>Bill Description</mat-label>
+            <input matInput placeholder="" name="billDescription" id="billDescription" formControlName="billDescription">
+        </mat-form-field><br>
+
+        <mat-icon>pin</mat-icon>
+        <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+            <mat-label>Bill Number</mat-label>
+            <input matInput placeholder="" name="billNumber" id="billNumber" formControlName="billNumber" type="number">
+        </mat-form-field><br>
+
+        <mat-icon>file_upload</mat-icon>
+        <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+            <mat-label>Bill Invoice Copy</mat-label>
+            <input matInput placeholder="In development" name="bill_copy_upload" type="text"><hr>
+            <h5><em>Upload color scan of original with atleast 200 DPI resolution, maximum file size of 5 MB and PDF format</em></h5>
+        </mat-form-field><br>
+
+        <mat-icon>currency_rupee</mat-icon>
+        <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+            <mat-label>Credit Amount</mat-label>
+            <input matInput placeholder="" name="creditAmount" id="creditAmount" formControlName="creditAmount" type="number">
+        </mat-form-field><br>
+
+        <mat-icon>percent</mat-icon>
+        <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+            <mat-label>Interest Rate</mat-label>
+            <input matInput placeholder="0" name="interestRate" id="interestRate" formControlName="interestRate" type="number"><hr>
+            <h5><em>Interest rate per 30 days (After credit limit days are crossed)</em></h5>
+        </mat-form-field><br>
+
+        <mat-icon>speed</mat-icon>
+        <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+            <mat-label>Credit limit days</mat-label>
+            <input matInput placeholder="" name="creditLimitDays" id="creditLimitDays" formControlName="creditLimitDays" type="number">
+        </mat-form-field><br>
+
+        <mat-icon>description</mat-icon>
+        <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+            <mat-label>Remark</mat-label>
+            <input matInput placeholder="" name="Remark" id="Remark" formControlName="Remark" type="text">
+        </mat-form-field><br>
+
+        <p class="card-text"><em>(Note: ₹10.00 will be deducted from your ReputeInfo balance for each search.)</em></p>
+        <br>
+
+          <div class="but-center">
+            <button mat-raised-button color="primary" type="submit">Send</button>
+            <button mat-raised-button color="accent" style="margin-left: 5px;">Reset</button>
+          </div>
+      </form>
+    </div>
+</div>

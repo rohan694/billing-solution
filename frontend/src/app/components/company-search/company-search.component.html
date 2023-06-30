@@ -1,0 +1,26 @@
+<div class="card">
+    <h2 class="card-header"><mat-icon style="padding-top: 5px;">search</mat-icon> | Company Search</h2>
+    <div class="card-body">
+      <h5 class="card-title">Search the Company using PAN and GSTIN</h5>
+      <form class="example-form" [formGroup]="form" (ngSubmit)="search()">
+
+        <mat-icon>person</mat-icon>
+        <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+          <mat-label>Individual or Company PAN</mat-label>
+          <input matInput placeholder="" name="companyPan" id="companyPan" formControlName="companyPan">
+        </mat-form-field><br>
+
+        <mat-icon>pin</mat-icon>
+        <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+          <mat-label>GSTIN</mat-label>
+          <input matInput placeholder="" value="" name="gstin" id="gstin" formControlName="gstin">
+        </mat-form-field><br>
+        <p class="card-text"><em>(Note: ₹10.00 will be deducted from your ReputeInfo balance for each search.)</em></p>
+        <br>
+          <div class="but-center">
+            <button mat-raised-button color="primary" type="submit">Search</button>
+            <button mat-raised-button color="accent" style="margin-left: 5px;">Reset</button>
+          </div>
+      </form>
+    </div>
+</div>

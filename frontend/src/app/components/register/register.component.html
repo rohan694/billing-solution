@@ -1,0 +1,63 @@
+<mat-toolbar color="primary" class="navbar">
+    <div>ReputeInfo</div>
+    <div>
+        <span>Home</span>
+        <span>About</span>
+        <span>Services</span>
+        <span><a routerLink="/login"><button mat-raised-button color="warn">Login</button></a></span>
+    </div>
+  </mat-toolbar>
+<div class="register">
+    <div class="card text-center">
+        <div class="card-header">
+          <h2>Registration</h2>
+          <!-- <h3>Add Unregistered Debter (Buyer)</h3> -->
+        </div>
+        <div class="card-body">
+            <form class="example-form" [formGroup]="form" (ngSubmit)="register()">
+                <mat-icon>person</mat-icon>
+                <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+                  <mat-label>Your Full Name</mat-label>
+                  <input matInput placeholder="" name="name" id="name" formControlName="name">
+                </mat-form-field><br>
+                <mat-icon>business</mat-icon>
+                <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+                  <mat-label>Business/ Company</mat-label>
+                  <input matInput placeholder="" value="" name="companyName" id="companyName" formControlName="companyName">
+                </mat-form-field><br>
+                <mat-icon>pin</mat-icon>
+                <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+                    <mat-label>GSTIN</mat-label>
+                    <input matInput placeholder="" name="gstin" id="gstin" formControlName="gstin">
+                </mat-form-field><br>
+                <mat-icon>phone</mat-icon>
+                <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+                    <mat-label>Mobile Number</mat-label>
+                    <input matInput placeholder="" name="mobile" id="mobile" formControlName="mobile" type="number">
+                </mat-form-field><br>
+                <mat-icon>123</mat-icon>
+                <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+                    <mat-label>PAN Number</mat-label>
+                    <input matInput placeholder="" name="companyPan" id="companyPan" formControlName="companyPan" type="text"><hr>
+                    <h5><em>Your username will be same as that of your PAN number</em></h5>
+                </mat-form-field><br>
+                <mat-icon>password</mat-icon>
+                <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="" name="password" id="password" formControlName="password" type="password">
+                </mat-form-field><br>
+                <mat-icon>password</mat-icon>
+                <mat-form-field class="example-full-width" appearance="fill" style="width: 50%;">
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput placeholder="" name="cnf_pwd" id="cnf_pwd" formControlName="cnf_pwd" type="password">
+                </mat-form-field><br>
+                  <button mat-raised-button color="accent" type="submit">Register</button>
+                  <!-- <span *ngIf="show"> <button mat-button color="primary">Login success !!</button></span><br><br> -->
+                  <!-- <a href="#">forgot password?</a> -->
+              </form>
+        </div>
+        <div class="card-footer text-body-secondary">
+          Note: Rs.10.00 will be debited from your ReputeInfo Balance.
+        </div>
+      </div>
+</div>
