@@ -6,7 +6,7 @@ const sessions = require('express-session');
 const app = express();
 
 var corsOptions = {
-    origin: "http://localhost:4200"
+    origin: "https://rohan694.github.io"
 };
 
 app.use(cors(corsOptions));
