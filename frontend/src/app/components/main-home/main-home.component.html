@@ -1,0 +1,62 @@
+<div class="main-page">
+    <mat-toolbar color="primary" class="navbar">
+        <div>ReputeInfo</div>
+        <div>
+            <span>Home</span>
+            <span>About</span>
+            <span>Services</span>
+            <span><button mat-raised-button color="warn" (click)="logout()">Logout</button></span>
+        </div>
+    </mat-toolbar>
+    <mat-sidenav-container>
+        <mat-sidenav mode="side" [(opened)]="opened">
+            <span><a mat-button style="width: 100%; color: white;" (click)="assignComponent('1')">Companies</a></span><hr>
+            <span><a mat-button style="width: 100%; color: white;" (click)="assignComponent('2')">Documents</a></span><hr>
+            <span><a mat-button style="width: 100%; color: white;" (click)="assignComponent('3')">Profile</a></span><hr>
+            <span><a mat-button style="width: 100%; color: white;" (click)="assignComponent('4')">Notifications</a></span><hr>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <mat-icon mat-raised-button (click)="opened=!opened">menu</mat-icon>
+            <div style="margin: 3% 3% 3% 3%; align-items: center; margin-left: 3%;">
+                <div class="card">
+                    <h2 class="card-header"><mat-icon style="padding-top: 5px;">Apartment</mat-icon> | Companies </h2>
+                    <div class="card-body">
+                      <table class="table table-primary table-striped table-hover">
+                        <thead>
+                          <tr>
+                            <th>Name of COmpany</th>
+                            <th>Type of Company</th>
+                            <th>Sector</th>
+                            <th>Your Permission</th>
+                          </tr>
+                        </thead>
+                          <tbody>
+                            <tr >
+                                <td routerLink="/home"><span>google</span></td>
+                                <td routerLink="/home">not specified</td>
+                                <td routerLink="/home">-</td>
+                                <td routerLink="/home">Credit and Debit</td>
+                            </tr>
+                        </tbody>  
+                      
+                    </table>
+                    </div>
+                </div>
+                <div *ngIf="one">
+                    <ng-container *ngComponentOutlet="dummyComponent1"></ng-container>
+                </div>
+                <div *ngIf="two">
+                    <ng-container *ngComponentOutlet="dummyComponent2"></ng-container>
+                </div>
+                <div *ngIf="three">
+                    <ng-container *ngComponentOutlet="dummyComponent3"></ng-container>
+                </div>
+                <div *ngIf="four">
+                    <ng-container *ngComponentOutlet="dummyComponent4"></ng-container>
+                </div>
+                
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+    </div>
+    

@@ -50,7 +50,7 @@ export class LoginComponent {
               this.error_msg = "";
               alert("Login Success");
               this.authService.login(JSON.stringify(response)).then(()=>{
-                this.router.navigate(['/home']);
+                this.router.navigate(['/main']);
               }) 
               
             }else{

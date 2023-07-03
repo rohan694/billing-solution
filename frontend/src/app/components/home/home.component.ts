@@ -32,6 +32,7 @@ export class HomeComponent{
     if(!this.authServ.isloggedIn()){
       this.router.navigate(['/login']);
     }
+    this.one = true;
   }
 
   assignComponent(str:string){

@@ -16,6 +16,7 @@ import { CreditorsComponent } from './components/creditors/creditors.component';
 import { DebtorsComponent } from './components/debtors/debtors.component';
 import { SendBillInfoComponent } from './components/send-bill-info/send-bill-info.component';
 import { AddDebtorFormComponent } from './components/add-debtor-form/add-debtor-form.component';
+import { MainHomeComponent } from './components/main-home/main-home.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AddDebtorFormComponent } from './components/add-debtor-form/add-debtor-
     CreditorsComponent,
     DebtorsComponent,
     SendBillInfoComponent,
-    AddDebtorFormComponent
+    AddDebtorFormComponent,
+    MainHomeComponent
   ],
   imports: [
     BrowserModule,

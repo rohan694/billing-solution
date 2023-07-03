@@ -9,10 +9,12 @@ import { CreditorsComponent } from './components/creditors/creditors.component';
 import { DebtorsComponent } from './components/debtors/debtors.component';
 import { SendBillInfoComponent } from './components/send-bill-info/send-bill-info.component';
 import { AddDebtorFormComponent } from './components/add-debtor-form/add-debtor-form.component';
+import { MainHomeComponent } from './components/main-home/main-home.component';
 
 const routes: Routes = [
   {path:'login', component : LoginComponent},
   {path:'home', component : HomeComponent},
+  {path:'main', component : MainHomeComponent},
   {path:'register', component : RegisterComponent},
   {path:'dashboard', component : DashboardComponent},
   {path:'companySearch', component : CompanySearchComponent},
